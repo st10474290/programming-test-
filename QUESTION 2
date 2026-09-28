@@ -1,0 +1,73 @@
+[13:26, 9/28/2026] +27 70 761 3772: package question2;
+
+public abstract class Consoles implements IConsoles {
+    private String consoleType;
+    private String store;
+    private int totalSales;
+
+    // Constructor
+    public Consoles(String consoleType, String store, int totalSales) {
+        this.consoleType = consoleType;
+        this.store = store;
+        this.totalSales = totalSales;
+    }
+
+    // Getter methods
+    @Override
+    public String getConsoleType() {
+        return consoleType;
+    }
+
+    @Override
+    public String getStore() {
+        return store;
+    }
+
+    @Override
+    public int getTotalSales() {
+        return totalSales;
+    }
+}
+[13:27, 9/28/2026] +27 70 761 3772: package question2;
+
+public interface IConsoles {
+    String getConsoleType();
+    String getStore();
+    int getTotalSales();
+}
+[13:27, 9/28/2026] +27 70 761 3772: package question2;
+
+public class ConsoleSales extends Consoles {
+
+    // Constructor
+    public ConsoleSales(String consoleType, String store, int totalSales) {
+        super(consoleType, store, totalSales);
+    }
+
+    // Method to print all the sales report
+    public void printReport() {
+        System.out.println("--------------------------------------------------");
+        System.out.println("CONSOLE SALES REPORT");
+        System.out.println("---------------------
+        package question2;
+
+public class ConsoleSales extends Consoles {
+
+    // Constructor
+    public ConsoleSales(String consoleType, String store, int totalSales) {
+        super(consoleType, store, totalSales);
+    }
+
+    // Method to print all the sales report
+    public void printReport() {
+        System.out.println("--------------------------------------------------");
+        System.out.println("CONSOLE SALES REPORT");
+        System.out.println("--------------------------------------------------");
+        System.out.println("CONSOLE TYPE: " + getConsoleType());
+        System.out.println("STORE: " + getStore());
+        System.out.println("TOTAL SALES: " + getTotalSales());
+        System.out.println("--------------------------------------------------");
+    }
+}
+        
+        

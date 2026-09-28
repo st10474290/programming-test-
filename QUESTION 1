@@ -1,0 +1,62 @@
+public class Main {
+    public static void main(String[] args) {
+
+        // 1D ARRAY FOR THE CITY NAMES
+        String[] cities = {"Cape Town", "Port Elizabeth", "Pretoria"};
+
+        // 2D ARRAY FOR CONSOLE SALES
+        // COLUMNS: PS5, XBOX, Switch
+        int[][] sales = {
+            {1000, 2000, 3000},    // Cape Town
+            {2000, 3000, 4000},    // Port Elizabeth
+            {1500, 1100, 1200}     // Pretoria
+        };
+
+        // 1D ARRAY TO STORE TOTAL SALES FOR EACH CITY
+        int[] cityTotals = new int[cities.length];
+
+        // CALCULATE TOTAL SALES FOR EACH CITY
+        for (int i = 0; i < sales.length; i++) {
+            for (int j = 0; j < sales[i].length; j++) {
+                cityTotals[i] += sales[i][j];
+            }
+        }
+
+        // DISPLAY THE GAMING CONSOLE REPORT
+        System.out.println(".............");
+        System.out.println("Gaming Console Report");
+        System.out.printf("%-20s %-10s %-10s %-10s%n",
+                "City", "PS5", "Xbox", "Switch");
+
+        for (int i = 0; i < cities.length; i++) {
+            System.out.printf("%-20s %-10d %-10d %-10d%n",
+                    cities[i],
+                    sales[i][0],
+                    sales[i][1],
+                    sales[i][2]);
+        }
+
+        System.out.println(".........");
+        System.out.println("Console Sales Total for Each City");
+        System.out.println("..........");
+
+        for (int i = 0; i < cities.length; i++) {
+            System.out.printf("%-20s %d%n", cities[i], cityTotals[i]);
+        }
+
+        // FIND THE CITY WITH THE MOST SALES
+        int highest = cityTotals[0];
+        int highestIndex = 0;
+
+        for (int i = 1; i < cityTotals.length; i++) {
+            if (cityTotals[i] > highest) {
+                highest = cityTotals[i];
+                highestIndex = i;
+            }
+        }
+
+        System.out.println();
+        System.out.println("CITY WITH THE MOST SALES: " + cities[highestIndex]);
+    }
+}
+    
